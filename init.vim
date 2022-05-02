@@ -20,6 +20,7 @@ set showcmd
 set cmdheight=1
 set laststatus=2
 set scrolloff=10
+set nowrap
 set expandtab
 "let loaded_matchparen = 1
 set backupskip=/tmp/*,/private/tmp/*
@@ -64,8 +65,6 @@ set formatoptions+=r
 " Highlights "{{{
 " ---------------------------------------------------------------------
 
-colorscheme peachpuff
-highligh Comment ctermfg=green
 
 "}}}
 
