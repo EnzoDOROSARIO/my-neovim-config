@@ -1,10 +1,5 @@
--- Example config in lua
-vim.g.nord_contrast = false
-vim.g.nord_borders = false
-vim.g.nord_disable_background = true
-vim.g.nord_italic = false
--- Load colorscheme
-require('nord').set()
+vim.cmd[[colorscheme tokyonight]]
+vim.g.tokyonight_style = "light"
 
 local nvim_lsp = require 'lspconfig'
 local coq = require "coq"
@@ -78,7 +73,7 @@ local on_attach = function(client, bufnr)
 end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
-local servers = { 'tsserver', 'angularls' }
+local servers = { 'tsserver', 'angularls', 'cssls' }
 for _, lsp in pairs(servers) do
     require('lspconfig')[lsp].setup(coq.lsp_ensure_capabilities({
         on_attach = function(client, bufnr)
@@ -89,7 +84,7 @@ end
 
 nvim_lsp.diagnosticls.setup {
     on_attach = on_attach,
-    filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'pandoc' },
+    filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'pandoc', 'html' },
     init_options = {
         linters = {
             eslint = {
@@ -143,6 +138,7 @@ nvim_lsp.diagnosticls.setup {
             typescript = 'prettier',
             typescriptreact = 'prettier',
             json = 'prettier',
+            html = 'prettier',
         }
     }
 }

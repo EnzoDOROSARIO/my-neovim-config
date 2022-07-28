@@ -22,6 +22,8 @@ set laststatus=2
 set scrolloff=10
 set nowrap
 set expandtab
+set background=light
+set t_Co=256
 "let loaded_matchparen = 1
 set backupskip=/tmp/*,/private/tmp/*
 
